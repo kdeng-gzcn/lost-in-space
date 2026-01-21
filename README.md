@@ -272,29 +272,18 @@ bash script/ea.sh
 
 Check our visulization of resutls (top for stage (i); left bottom for stage (ii); right bottom for stage (iii)):
 
-<div class="img-grid">
-  <img src="./assets/ea-i.png" class="img-wide" />
-  <img src="./assets/ea-ii.png" />
-  <img src="./assets/ea-iii.png" />
-</div>
+<img src="./assets/ea-i.png" width="100%" />
 
-<style>
-  .img-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    max-width: 100%;
-  }
-
-  .img-grid img {
-    width: 100%;
-    height: auto;
-  }
-
-  .img-wide {
-    grid-column: 1 / 3;
-  }
-</style>
+<table>
+  <tr>
+    <td>
+      <img src="./assets/ea-ii.png" width="100%" />
+    </td>
+    <td>
+      <img src="./assets/ea-iii.png" width="100%" />
+    </td>
+  </tr>
+</table>
 
 <!-- ## Citation
 ```bibtex
