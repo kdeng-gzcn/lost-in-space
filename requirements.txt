@@ -1,0 +1,17 @@
+accelerate
+anthropic
+colorama
+datasets
+dotenv
+ipykernel
+jupyter
+jsonlines
+matplotlib
+numpy
+openai
+pandas
+qwen-vl-utils
+scikit-learn
+tqdm
+transformers
+yacs

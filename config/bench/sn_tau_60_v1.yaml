@@ -1,0 +1,12 @@
+dataset:
+  name: ScanNet
+  level: 60
+
+filter:
+  tau_limit: 60.0
+  cpd_limit: 600.0
+  theta_limit: 20.0
+  stride_i: 50
+  stride_j: 2
+  min_gap: 50
+  max_gap: 600

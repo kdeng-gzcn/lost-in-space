@@ -1,0 +1,11 @@
+dataset:
+  name: 7 Scenes
+  level: 60
+
+filter:
+  tau_limit: 60.0
+  cpd_limit: 300.0
+  stride_i: 25
+  stride_j: 2
+  min_gap: 15
+  max_gap: 400

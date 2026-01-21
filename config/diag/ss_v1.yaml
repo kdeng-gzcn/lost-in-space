@@ -1,0 +1,14 @@
+dataset:
+  name: 7 Scenes
+
+filter:
+  tx: [0.15, 0.4]
+  ty: [0.1, 0.3]
+  tz: [0.15, 0.4]
+  theta: [3, 10]
+  phi: [5, 15]
+  psi: [3, 10]
+  stride_i: 1
+  stride_j: 1
+  min_gap: 1
+  max_gap: 125
