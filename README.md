@@ -1,6 +1,6 @@
 <div align="center" style="font-family: charter;">
 
-<h1><img src="assets/astronaut.png" width="28"/><i> Lost in Space?</i></br> Vision-Language Models still Struggle with RCPE</h1>
+<h1><img src="assets/astronaut.png" width="28"/><i> Lost in Space?</i></br> Vision-Language Models Struggle with Relative Camera Pose Estimation</h1>
 
 <a href="https://huggingface.co/datasets/kdeng03/VRRPI-Bench" target="_blank">
     <img alt="HF Dataset: VRRPI-Bench" src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-VRRPI--Bench-ffc107?color=ffc107&logoColor=white" height="18" />
@@ -10,21 +10,23 @@
 </a>
 
 <div>
-    Ken Deng, </span>
-    Yifu Qiu, </span>
-    Yoni Kasten, </span>
-    Shay B. Cohen, </span>
-    Yftah Ziser
+    <a href="https://github.com/kdeng-gzcn" target="_blank">Ken Deng</a><sup>1, 2</sup>&emsp;
+    <a href="https://github.com/yfqiu-nlp" target="_blank">Yifu Qiu</a><sup>1</sup>&emsp;
+    <a href="https://ykasten.github.io/" target="_blank">Yoni Kasten</a><sup>3</sup>&emsp;
+    <a href="https://homepages.inf.ed.ac.uk/scohen/" target="_blank">Shay B. Cohen</a><sup>1</sup>&emsp;
+    <a href="https://yftah89.github.io/" target="_blank">Yftah Ziser</a><sup>3, 4</sup>
 </div>
 
-<!-- <div>
+<div>
     <sup>1</sup>University of Edinburgh&emsp;
-    <sup>2</sup>University of Groningen&emsp;
-</div> -->
+    <sup>2</sup>University of Oxford&emsp;
+    <sup>3</sup>Nvidia Research&emsp;
+    <sup>4</sup>University of Groningen&emsp;
+</div>
 
 ---
 
-We introduce `VRRPI-Bench`, a benchmark derived from unlabeled egocentric videos with verbalized annotations of relative camera motion, reflecting realistic scenarios with simultaneous translation and rotation around a shared object. We further propose `VRRPI-Diag`, a diagnostic benchmark that isolates individual motion degrees of freedom. Even state-of-the-art models such as GPT-5 ($0.64$) fall short of classic geometric baselines ($0.97$) and human performance ($0.92$). Moreover, VLMs exhibit difficulty in multi-image reasoning, with inconsistent performance (best $59.7\%$) when integrating spatial cues across frames.
+We introduce `VRRPI-Bench`, a benchmark derived from unlabeled egocentric videos with verbalized annotations of relative camera motion, reflecting realistic scenarios with simultaneous translation and rotation around a shared object. We further propose `VRRPI-Diag`, a diagnostic benchmark that isolates individual motion degrees of freedom. Even state-of-the-art models such as GPT-5 ($0.64$) fall short of classic geometric baselines ($0.97$) and human performance ($0.92$). Moreover, VLMs exhibit difficulty in multi-image reasoning, with inconsistent performance (best $59.7$%) when integrating spatial cues across frames.
 
 Want to compete with VLMs? Try with our [Human Evaluation Google Form](https://forms.gle/3TMuQpETQSz92vHf6).
 
@@ -97,10 +99,16 @@ print(cv_eval(rpv, R_loftr, t_loftr))
 print("-" * 30)
 ```
 
-<div style="display:flex; gap:16px; text-align:center;">
-  <img src="assets/src_img.png" style="width:49%;">
-  <img src="assets/tgt_img.png" style="width:49%;">
-</div>
+<table width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center">
+      <img src="./assets/src_img.png" width="100%" />
+    </td>
+    <td align="center">
+      <img src="./assets/tgt_img.png" width="100%" />
+    </td>
+  </tr>
+</table>
 
 ```text
 ------------------------------
@@ -182,7 +190,7 @@ Then download the datasets:
 
 ### Step2: Execute Filter Algorithm
 
-We filter data from 7 Scenes as example as follows (modify configuration in bash file for filtering other datasets and splits):
+We filter data from 7 Scenes as example, the command is as follows (modify configuration in bash file for filtering other datasets and splits):
 
 ```bash
 bash script/benchmark_filter.sh 
@@ -236,9 +244,9 @@ To evaluate VLMs, CV methods on `VRRPI-Bench`, run the following command (modify
 
 Check our visulization of resutls (human, VLMs and CV methods performance on `VRRPI-Bench`):
 
-<div style="text-align:center;">
+<p align="center">
     <img src="./assets/res_main.png" width="50%"/>
-</div>
+</p>
 
 ### Consistency Analysis
 
@@ -252,15 +260,15 @@ bash script/consistency.sh
 
 Check our visulization of resutls:
 
-<div style="text-align:center;">
+<p align="center">
     <img src="./assets/consistency.png" width="60%"/>
-</div>
+</p>
 
 ### Error Analysis
 
 We provide a three-stages error analysis to investigate the underlying spatial reasoning mechanism of VLMs:
 
-- Stage (i): Intra-Image Spatial Position Understanding - Inspired by [Kamath et al.](https://arxiv.org/abs/2310.19785), we construct one-object tasks (determining an object’s position within the image: left, right, top, bottom) and two-object tasks (determining the relative position between obj.1 and obj.2: left, right, above, below, front, behind)
+- Stage (i): Intra-Image Spatial Position Understanding - Inspired by [Kamath et al.](https://arxiv.org/abs/2310.19785), we construct one-object tasks (determining an object’s position within the image: left, right, top, bottom) and two-object tasks (determining the relative position between obj.1 and obj.2: left, right, above, below, front, behind).
 - Stage (ii): Cross-Image Relational Comparison. - We evaluate whether VLMs can compare how the position of a shared reference object changes under camera motion across two disparate viewpoints. 
 - Stage (iii): Camera-Perspective Reasoning. - We evaluate VLMs under four iterative prompting setups.
 
@@ -272,14 +280,17 @@ bash script/ea.sh
 
 Check our visulization of resutls (top for stage (i); left bottom for stage (ii); right bottom for stage (iii)):
 
-<img src="./assets/ea-i.png" width="100%" />
-
-<table>
+<table width="100%" cellspacing="0" cellpadding="0">
   <tr>
-    <td>
+    <td colspan="2" align="center">
+      <img src="./assets/ea-i.png" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
       <img src="./assets/ea-ii.png" width="100%" />
     </td>
-    <td>
+    <td align="center">
       <img src="./assets/ea-iii.png" width="100%" />
     </td>
   </tr>
