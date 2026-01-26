@@ -1,13 +1,9 @@
 <div align="center" style="font-family: charter;">
 
-<h1><img src="assets/astronaut.png" width="28"/><i> Lost in Space?</i></br> Vision-Language Models Struggle with Relative Camera Pose Estimation</h1>
+<h1><img src="assets/astronaut.png" width="40"/><i> Lost in Space?</i></br> Vision-Language Models Struggle with Relative Camera Pose Estimation</h1>
 
-<a href="https://huggingface.co/datasets/kdeng03/VRRPI-Bench" target="_blank">
-    <img alt="HF Dataset: VRRPI-Bench" src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-VRRPI--Bench-ffc107?color=ffc107&logoColor=white" height="18" />
-</a>
-<a href="https://huggingface.co/datasets/kdeng03/VRRPI-Diag" target="_blank">
-    <img alt="HF Dataset: VRRPI-Diag" src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-VRRPI--Diag-ffc107?color=ffc107&logoColor=white" height="18" />
-</a>
+<a href="https://huggingface.co/datasets/kdeng03/VRRPI-Bench" target="_blank"><img alt="HF Dataset: VRRPI-Bench" src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-VRRPI--Bench-ffc107?color=ffc107&logoColor=white" height="18"></a>
+<a href="https://huggingface.co/datasets/kdeng03/VRRPI-Diag" target="_blank"><img alt="HF Dataset: VRRPI-Diag" src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-VRRPI--Diag-ffc107?color=ffc107&logoColor=white" height="18"></a>
 
 <div>
     <a href="https://github.com/kdeng-gzcn" target="_blank">Ken Deng</a><sup>1, 2</sup>&emsp;
@@ -20,7 +16,7 @@
 <div>
     <sup>1</sup>University of Edinburgh&emsp;
     <sup>2</sup>University of Oxford&emsp;
-    <sup>3</sup>Nvidia Research&emsp;
+    <sup>3</sup>NVIDIA Research&emsp;
     <sup>4</sup>University of Groningen&emsp;
 </div>
 
@@ -35,6 +31,7 @@ Want to compete with VLMs? Try with our [Human Evaluation Google Form](https://f
 ## Contents
 
 - [Quick Example](#quick-example)
+- [Environment Setup](#environment-setup)
 - [Prepare Benchmark](#prepare-benchmark)
   - [Step1: Download Dataset](#step1-download-dataset)
   - [Step2: Execute Filter Algorithm](#step2-execute-filter-algorithm)
@@ -149,11 +146,7 @@ LoFTR Evaluation:
 ------------------------------
 ```
 
-## Prepare Benchmark
-
-In this section, we introduce how we filter three famous public 3D datasets and generate our benchmarks for spatial reasoning QA. We already published our benchmarks on Hugging Face ([VRRPI-Bench](https://huggingface.co/datasets/kdeng03/VRRPI-Bench) and [VRRPI-Diag](https://huggingface.co/datasets/kdeng03/VRRPI-Diag)), if you are interested in evaluation results, please refer to [Comprehensive Evaluation](#comprehensive-evaluation).
-
-### Step1: Download Dataset
+## Environment Setup
 
 Before everything, confirm that you are under the project directory and prepare the environment:
 ```bash
@@ -163,7 +156,13 @@ source .env # Check the env file to configurate .env
 ```
 > Expected output: a conda environment named `sr` with packages mentioned in `requirements.txt`
 
-Then download the datasets:
+## Prepare Benchmark
+
+In this section, we introduce how we filter three famous public 3D datasets and generate our benchmarks for spatial reasoning QA. We already published our benchmarks on Hugging Face ([VRRPI-Bench](https://huggingface.co/datasets/kdeng03/VRRPI-Bench) and [VRRPI-Diag](https://huggingface.co/datasets/kdeng03/VRRPI-Diag)), if you are interested in evaluation results, please refer to [Comprehensive Evaluation](#comprehensive-evaluation).
+
+### Step1: Download Dataset
+
+To download the datasets:
 
 1. **[7 Scenes](https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/)** is provided for non-commercial use only. By downloading the data, you accept the [license agreement](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/7-scenes-msr-la-dataset-7-scenes.rtf). The command for downloading is as follows:
 
