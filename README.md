@@ -1,9 +1,10 @@
 <div align="center" style="font-family: charter;">
 
-<h1><img src="assets/astronaut.png" width="40"/><i> Lost in Space?</i></br> Vision-Language Models Struggle with Relative Camera Pose Estimation</h1>
+<h1><img src="assets/astronaut.png" width="37"/><i> Lost in Space?</i></br> Vision-Language Models Struggle with Relative Camera Pose Estimation</h1>
 
-<a href="https://huggingface.co/datasets/kdeng03/VRRPI-Bench" target="_blank"><img alt="HF Dataset: VRRPI-Bench" src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-VRRPI--Bench-ffc107?color=ffc107&logoColor=white" height="18"></a>
-<a href="https://huggingface.co/datasets/kdeng03/VRRPI-Diag" target="_blank"><img alt="HF Dataset: VRRPI-Diag" src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-VRRPI--Diag-ffc107?color=ffc107&logoColor=white" height="18"></a>
+<a href="https://arxiv.org/abs/2601.22228" target="_blank"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2601.22228-b31b1b?logo=arxiv" height="20"></a>
+<a href="https://huggingface.co/datasets/kdeng03/VRRPI-Bench" target="_blank"><img alt="HF Dataset: VRRPI-Bench" src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-VRRPI--Bench-ffc107?color=ffc107&logoColor=white" height="20"></a>
+<a href="https://huggingface.co/datasets/kdeng03/VRRPI-Diag" target="_blank"><img alt="HF Dataset: VRRPI-Diag" src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-VRRPI--Diag-ffc107?color=ffc107&logoColor=white" height="20"></a>
 
 <div>
     <a href="https://github.com/kdeng-gzcn" target="_blank">Ken Deng</a><sup>1, 2</sup>&emsp;
@@ -40,7 +41,7 @@ Want to compete with VLMs? Try with our [Human Evaluation Google Form](https://f
   - [Evaluate VLMs and CV Methods](#evaluate-vlms-and-cv-methods)
   - [Consistency Analysis](#consistency-analysis)
   - [Error Analysis](#error-analysis)
-<!-- - [Citation](#citation) -->
+- [Citation](#citation)
 
 ## Quick Example
 
@@ -295,15 +296,16 @@ Check our visulization of resutls (top for stage (i); left bottom for stage (ii)
   </tr>
 </table>
 
-<!-- ## Citation
+## Citation
+If you find our paper and code useful in your research, please cite our paper using the following BibTeX :)
 ```bibtex
-@misc{...,
-      title={...}, 
-      author={...},
+@misc{deng2026lostspacevisionlanguagemodels,
+      title={Lost in Space? Vision-Language Models Struggle with Relative Camera Pose Estimation}, 
+      author={Ken Deng and Yifu Qiu and Yoni Kasten and Shay B. Cohen and Yftah Ziser},
       year={2026},
-      eprint={...},
+      eprint={2601.22228},
       archivePrefix={arXiv},
-      primaryClass={...},
-      url={...}, 
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2601.22228}, 
 }
-``` -->
+```
